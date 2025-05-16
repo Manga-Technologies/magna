@@ -7,7 +7,7 @@ const issuer = "REPLACE WITH ACTUAL ISSUER KEY";
 
 export function fetchTransactionList() {
 
-
+    
 
 
 
@@ -16,6 +16,7 @@ export function fetchTransactionList() {
 }
 
 // uses trustline count to get total number of leaderboard participants
+// queries horizon endpoint
 export async function getTrustLineAccounts() {
 
     const response = await server.assets()
@@ -30,5 +31,8 @@ export async function getTrustLineAccounts() {
     }
 
     return assetRecord.num_accounts;
+}
 
+function getAccounts() {
+    return server.accounts().limit(200).call();
 }
