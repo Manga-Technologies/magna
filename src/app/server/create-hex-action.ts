@@ -6,6 +6,4 @@ export function createHex(score : number) {
     let hexCode = "#";
 
     
-
-
 }
