@@ -223,6 +223,7 @@ export const PhysicsBall = ({
         setShowResults(false)
         setIsNewHighScore(false)
         gameStartTimeRef.current = Date.now()
+        nextPopupId.current = 0  // Reset popup ID counter
 
         // Reset position to center of screen
         if (containerRef.current) {
@@ -327,9 +328,8 @@ export const PhysicsBall = ({
     useEffect(() => {
         if (scorePopups.length > 0) {
             const timeout = setTimeout(() => {
-                // Only remove popups that have been visible for a while
-                const now = performance.now()
-                setScorePopups((prev) => prev.filter((popup) => now - popup.id < 800))
+                // Remove the oldest popups after they've been visible for a while
+                setScorePopups((prev) => prev.slice(-10)) // Keep the 10 most recent popups
             }, 800)
 
             return () => clearTimeout(timeout)
@@ -384,7 +384,7 @@ export const PhysicsBall = ({
                     setScorePopups((prev) => [
                         ...prev.slice(-9), // Keep only the 9 most recent popups
                         {
-                            id: now,
+                            id: nextPopupId.current++,
                             value: -combo,
                             x: sourceX,
                             y: sourceY - 40,
@@ -411,7 +411,7 @@ export const PhysicsBall = ({
             setScorePopups((prev) => [
                 ...prev.slice(-9), // Keep only the 9 most recent popups
                 {
-                    id: now,
+                    id: nextPopupId.current++,
                     value: pointsToAdd,
                     x: sourceX,
                     y: sourceY,
