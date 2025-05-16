@@ -34,3 +34,16 @@ export async function getAllAssetHolders(issuer: string) {
 
   return holdersMap;
 }
+
+export async function getTrustLineAccounts(issuer : string, assetCode : string) {
+
+    const response = await fetch(`/api/fetch-tl-acc?assetCode=${assetCode}&issuer=${issuer}`);
+    const data = await response.json()
+    const assetRecord = data._embedded?.records?.[0];
+
+    if (!assetRecord) {
+        throw new Error("Asset not found on network...");
+    }
+
+    return assetRecord.num_accounts;
+}
