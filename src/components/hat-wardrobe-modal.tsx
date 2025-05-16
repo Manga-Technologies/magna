@@ -16,14 +16,14 @@ type Hat = {
 }
 
 const hats: Hat[] = [
-    { id: 1, name: "Baseball Cap", image: "/baseball-cap.png", color: "Blue" },
-    { id: 2, name: "Beanie", image: "/knitted-beanie.png", color: "Gray" },
-    { id: 3, name: "Fedora", image: "/fedora-hat.png", color: "Black" },
-    { id: 4, name: "Bucket Hat", image: "/bucket-hat.png", color: "Beige" },
-    { id: 5, name: "Sun Hat", image: "/sun-hat.png", color: "Straw" },
-    { id: 6, name: "Cowboy Hat", image: "/classic-cowboy-hat.png", color: "Brown" },
-    { id: 7, name: "Beret", image: "/placeholder-yf6au.png", color: "Red" },
-    { id: 8, name: "Straw Hat", image: "/straw-hat.png", color: "Natural" },
+    { id: 1, name: "Baseball Cap", image: "", color: "Blue" },
+    { id: 2, name: "Beanie", image: "", color: "Gray" },
+    { id: 3, name: "Fedora", image: "", color: "Black" },
+    { id: 4, name: "Bucket Hat", image: "", color: "Beige" },
+    { id: 5, name: "Sun Hat", image: "", color: "Straw" },
+    { id: 6, name: "Cowboy Hat", image: "", color: "Brown" },
+    { id: 7, name: "Beret", image: "", color: "Red" },
+    { id: 8, name: "Straw Hat", image: "", color: "Natural" },
 ]
 
 export function HatWardrobeModal() {
