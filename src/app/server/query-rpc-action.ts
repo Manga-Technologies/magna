@@ -21,15 +21,11 @@ export async function getTrustLineAccounts() {
 
     const response = await fetch(`/api/fetch-tl-acc?assetCode=${assetCode}&issuer=${issuer}`);
     const data = await response.json()
-    const assetRecord = data[0];
+    const assetRecord = data._embedded?.records?.[0];
 
     if (!assetRecord) {
         throw new Error("Asset not found on network...");
     }
 
     return assetRecord.num_accounts;
-}
-
-function getAccounts() {
-    return server.accounts().limit(200).call();
 }
