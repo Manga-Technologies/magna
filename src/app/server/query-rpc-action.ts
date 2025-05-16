@@ -7,7 +7,7 @@ const issuer = "REPLACE WITH ACTUAL ISSUER KEY";
 
 export function fetchTransactionList() {
 
-    
+
 
 
 
@@ -19,12 +19,9 @@ export function fetchTransactionList() {
 // queries horizon endpoint
 export async function getTrustLineAccounts() {
 
-    const response = await server.assets()
-        .forCode(assetCode)
-        .forIssuer(issuer)
-        .call();
-
-    const assetRecord = response[0];
+    const response = await fetch(`/api/fetch-tl-acc?assetCode=${assetCode}&issuer=${issuer}`);
+    const data = await response.json()
+    const assetRecord = data[0];
 
     if (!assetRecord) {
         throw new Error("Asset not found on network...");
