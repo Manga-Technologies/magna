@@ -24,6 +24,6 @@
     "@types/react-dom": "^19",
     "@types/seedrandom": "^3.0.8",
     "eslint": "^9",
-    "eslint-config-next": "15.3.2",
+    "eslint-config-next": "15.3.2"
   }
 }
