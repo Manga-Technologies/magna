@@ -1,0 +1,25 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Volcano Base -->
+  <path d="M60,150 L100,50 L140,150 Z" fill="#8B4513" stroke="#333" stroke-width="2"/>
+  <!-- Volcano Crater -->
+  <ellipse cx="100" cy="70" rx="15" ry="10" fill="#FF4500"/>
+  <!-- Lava Flows -->
+  <path d="M85,70 L75,150" stroke="#FF4500" stroke-width="4"/>
+  <path d="M115,70 L125,150" stroke="#FF4500" stroke-width="4"/>
+  <!-- Eruption -->
+  <g>
+    <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+    <path d="M95,70 Q100,30 105,70" fill="#FF4500" stroke="#FF0000" stroke-width="2"/>
+    <circle cx="90" cy="40" r="5" fill="#FF4500"/>
+    <circle cx="110" cy="35" r="6" fill="#FF4500"/>
+    <circle cx="95" cy="25" r="4" fill="#FF4500"/>
+    <circle cx="105" cy="20" r="3" fill="#FF4500"/>
+  </g>
+  <!-- Smoke -->
+  <g fill="#CCCCCC">
+    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="3s" repeatCount="indefinite"/>
+    <circle cx="85" cy="30" r="7"/>
+    <circle cx="115" cy="25" r="9"/>
+    <circle cx="100" cy="15" r="8"/>
+  </g>
+</svg>
