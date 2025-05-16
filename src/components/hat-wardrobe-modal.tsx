@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { cn } from "@/lib/utils"
-import { Check } from "lucide-react"
+import { Check, Crown } from "lucide-react"
 import Image from "next/image"
 import gsap from "gsap"
 
@@ -51,12 +51,14 @@ export function HatWardrobeModal() {
                     modalRef.current,
                     {
                         opacity: 0,
-                        y: -20,
+                        y: 50,
+                        x: 50,
                         scale: 0.95,
                     },
                     {
                         opacity: 1,
                         y: 0,
+                        x: 0,
                         scale: 1,
                         duration: 0.4,
                         ease: "power2.out",
@@ -120,7 +122,8 @@ export function HatWardrobeModal() {
             // Animate modal closing with slide down
             gsap.to(modalRef.current, {
                 opacity: 0,
-                y: 100,
+                y: 50,
+                x: 50,
                 scale: 0.9,
                 duration: 0.6,
                 ease: "power2.in",
@@ -148,18 +151,19 @@ export function HatWardrobeModal() {
             <DialogTrigger asChild>
                 <Button
                     variant="outline"
-                    className="px-6 py-2 text-base font-medium transition-all hover:shadow-md"
+                    className="relative px-6 py-3 text-base font-medium transition-all duration-300 bg-white/10 backdrop-blur-md rounded-full shadow-lg border border-white/20 text-white hover:bg-white/15 hover:scale-105 flex items-center justify-center"
                     onClick={() => {
                         gsap.to(document.body, { duration: 0.01 }) // Initialize GSAP
                     }}
                 >
-                    Open Virtual Wardrobe
+                    <Crown className="mr-2 h-5 w-5" />
+                    Choose a Hat
                 </Button>
             </DialogTrigger>
 
             {open && (
                 <DialogContent
-                    className="sm:max-w-[700px] p-0 overflow-hidden rounded-xl border-none shadow-2xl fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                    className="sm:max-w-[700px] p-0 overflow-hidden rounded-xl border-none shadow-2xl fixed bottom-6 right-6 transform-none"
                     onCloseAutoFocus={(e) => {
                         // Prevent the default focus behavior
                         e.preventDefault()
@@ -240,7 +244,12 @@ export function HatWardrobeModal() {
                                     <Button
                                         onClick={handleSelect}
                                         disabled={!selectedHat}
-                                        className={cn("px-8 py-6 text-lg font-medium transition-all", selectedHat ? "hover:shadow-md" : "")}
+                                        className={cn(
+                                            "px-8 py-6 text-lg font-medium transition-all duration-300",
+                                            selectedHat 
+                                                ? "bg-white/10 backdrop-blur-md rounded-full shadow-lg border border-white/20 text-white hover:bg-white/15 hover:scale-105" 
+                                                : "bg-gray-300/50 text-gray-500 cursor-not-allowed rounded-full"
+                                        )}
                                         size="lg"
                                     >
                                         {selectedHat ? `Select ${selectedHat.name}` : "Select a Hat"}
@@ -252,10 +261,10 @@ export function HatWardrobeModal() {
                                     className="flex flex-col items-center absolute left-1/2 transform -translate-x-1/2"
                                     style={{ opacity: 0, display: animationComplete ? "flex" : "none" }}
                                 >
-                                    <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center mb-2">
-                                        <Check className="w-6 h-6 text-white" />
+                                    <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center mb-3 shadow-lg border border-white/30">
+                                        <Check className="w-7 h-7 text-white" />
                                     </div>
-                                    <p className="text-green-600 dark:text-green-400 font-medium">Hat selected!</p>
+                                    <p className="text-white font-medium text-lg backdrop-blur-sm px-4 py-2 rounded-full bg-white/10">Hat selected!</p>
                                 </div>
                             </div>
                         </div>
