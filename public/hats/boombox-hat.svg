@@ -1,0 +1,43 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Boom Box Body -->
+  <rect x="50" y="80" width="100" height="60" rx="5" fill="#333333" stroke="#000" stroke-width="2"/>
+  <!-- Handle -->
+  <path d="M70,80 L70,70 L130,70 L130,80" fill="none" stroke="#000" stroke-width="4"/>
+  <!-- Speakers -->
+  <circle cx="70" cy="110" r="15" fill="#444444" stroke="#000" stroke-width="2"/>
+  <circle cx="70" cy="110" r="10" fill="#666666" stroke="#000" stroke-width="1"/>
+  <circle cx="70" cy="110" r="5" fill="#888888">
+    <animate attributeName="r" values="5;7;5" dur="0.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="130" cy="110" r="15" fill="#444444" stroke="#000" stroke-width="2"/>
+  <circle cx="130" cy="110" r="10" fill="#666666" stroke="#000" stroke-width="1"/>
+  <circle cx="130" cy="110" r="5" fill="#888888">
+    <animate attributeName="r" values="5;8;5" dur="0.7s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Control Panel -->
+  <rect x="85" y="90" width="30" height="40" rx="2" fill="#222222" stroke="#000" stroke-width="1"/>
+  
+  <!-- Buttons and Knobs -->
+  <circle cx="95" cy="100" r="3" fill="#FF0000"/>
+  <circle cx="105" cy="100" r="3" fill="#00FF00"/>
+  
+  <!-- Volume Sliders -->
+  <rect x="90" y="110" width="2" height="15" fill="#CCCCCC"/>
+  <rect x="100" cy="110" width="2" height="15" fill="#CCCCCC"/>
+  <rect x="110" cy="110" width="2" height="15" fill="#CCCCCC"/>
+  
+  <!-- Cassette Window -->
+  <rect x="90" y="130" width="20" height="5" rx="1" fill="#555555" stroke="#000" stroke-width="1"/>
+  
+  <!-- Music Notes -->
+  <g fill="#FFFF00">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+    <path d="M45,90 C50,80 55,100 60,90" stroke="#FFFF00" stroke-width="1" fill="none"/>
+    <circle cx="45" cy="90" r="3"/>
+    
+    <path d="M140,90 C145,80 150,100 155,90" stroke="#FFFF00" stroke-width="1" fill="none"/>
+    <circle cx="140" cy="90" r="3"/>
+  </g>
+</svg>

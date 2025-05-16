@@ -1,0 +1,20 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="100" cy="100" rx="70" ry="20" fill="transparent" stroke="#7CFC00" stroke-width="2" />
+  <!-- Flowers -->
+  <g transform="translate(60, 90)">
+    <circle cx="0" cy="0" r="10" fill="#FF69B4" />
+    <circle cx="0" cy="0" r="5" fill="#FFFF00" />
+  </g>
+  <g transform="translate(85, 85)">
+    <circle cx="0" cy="0" r="10" fill="#FF69B4" />
+    <circle cx="0" cy="0" r="5" fill="#FFFF00" />
+  </g>
+  <g transform="translate(110, 85)">
+    <circle cx="0" cy="0" r="10" fill="#FF69B4" />
+    <circle cx="0" cy="0" r="5" fill="#FFFF00" />
+  </g>
+  <g transform="translate(135, 90)">
+    <circle cx="0" cy="0" r="10" fill="#FF69B4" />
+    <circle cx="0" cy="0" r="5" fill="#FFFF00" />
+  </g>
+</svg>
